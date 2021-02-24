@@ -222,8 +222,9 @@ autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens ctermfg=blue
 " Enable mouse
 set mouse+=a
 
-" Copy to clipboard (for macOS)
+" Copy to clipboard (requires +clipboard)
 set clipboard=unnamed
+vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
 
 " Search into subfolders, enable file tab-completion
 set path=.,,**
